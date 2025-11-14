@@ -1,4 +1,4 @@
-/* Variables CSS para temas (claro y oscuro) */
+/* Variables CSS para temas (claro y oscuro) - Mantengo las existentes y agrego para formulario */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -8,6 +8,9 @@
     --card-bg: #ffffff;
     --progress-bg: #e9ecef;
     --progress-fill: #007bff;
+    --error-color: #dc3545; /* Rojo para errores */
+    --success-color: #28a745; /* Verde para éxito */
+    --border-color: #ddd; /* Gris claro para bordes */
 }
 
 .dark-mode {
@@ -19,6 +22,9 @@
     --card-bg: #1e1e1e;
     --progress-bg: #343a40;
     --progress-fill: #0d6efd;
+    --error-color: #ff6b6b; /* Rojo más claro para modo oscuro */
+    --success-color: #51cf66; /* Verde más claro para modo oscuro */
+    --border-color: #555; /* Gris oscuro para bordes */
 }
 
 * {
@@ -108,10 +114,13 @@ body {
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -123,6 +132,7 @@ body {
     background-color: var(--primary-color);
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
 .btn-secondary {
@@ -135,6 +145,7 @@ body {
     background-color: white;
     color: var(--primary-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Secciones generales */
@@ -158,6 +169,7 @@ h2 {
     top: 0;
     bottom: 0;
     width: 2px;
+    background: var(--primary-color);
     transform: translateX(-50%);
 }
 
@@ -166,7 +178,7 @@ h2 {
     position: relative;
 }
 
-.experience-list-item:nth-child(even) .timeline-content {
+.experience-list-item:nth-child(even) .experience-list-content {
     margin-left: 50%;
     text-align: right;
 }
@@ -221,11 +233,12 @@ hr {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #educacion li:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 #educacion h3 {
@@ -246,11 +259,12 @@ hr {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .skill i {
@@ -286,46 +300,152 @@ hr {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;  /* AJUSTE: Unificada transición para consistencia */
+    transition: all 0.3s ease;  /* Transición unificada para consistencia */
     text-align: justify;  /* Justifica el texto dentro de la tarjeta */
-    padding: 20px;  /* Margen interna invisible (relleno) para dar espacio al texto */
-    line-height: 1.6;  /* AJUSTE: Agregado para espaciar líneas y reducir amontonamiento */
+    padding: 20px;  /* Margen interna para espacio al texto */
+    line-height: 1.6;  /* Espaciado de líneas para reducir amontonamiento */
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    filter: brightness(1.05);  /* AJUSTE: Mejora contraste en hover */
+    filter: brightness(1.05);  /* Mejora contraste en hover */
 }
 
 .project-card img {
     width: 60%; 
     height: 50px; 
-    object-fit: cover;  /* AJUSTE: Agregado para mantener proporción de imágenes */
+    object-fit: cover;  /* Mantiene proporción de imágenes */
+    margin-bottom: 15px;
 }
 
-/* Responsividad */
-@media (max-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr;  /* AJUSTE: Una columna en móviles para evitar tarjetas estrechas */
-    }
-    .hero h1 {
-        font-size: 2.5em;  /* AJUSTE: Tamaño de fuente responsivo */
-    }
-    .hero h2 {
-        font-size: 1.2em;
-    }
-    .hero-tagline {
-        font-size: 1em;
-    }
+/* Formulario de Contacto (NUEVO: Estilos para el formulario corregido) */
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-/* Botón flotante de LinkedIn (integrado en las últimas líneas) */
+#contactForm:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 0.9em;
+    display: none;
+    margin-top: 5px;
+}
+
+.success {
+    color: var(--success-color);
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#formMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: var(--accent-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer .social-links a {
+    color: var(--primary-color);
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Botón de Tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle i {
+    color: var(--text-color);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover i {
+    color: white;
+}
+
+/* Botón flotante de LinkedIn */
 .linkedin-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 90px;  /* Encima del WhatsApp (25px + 60px de altura + 5px de separación) */
+    bottom: 90px;  /* Encima del WhatsApp */
     right: 25px;
     background-color: #0077b5;  /* Color oficial de LinkedIn */
     color: white;
@@ -345,14 +465,14 @@ hr {
     background-color: #005885;  /* Color más oscuro en hover */
 }
 
-/* Botón flotante de WhatsApp (integrado en las últimas líneas) */
+/* Botón flotante de WhatsApp */
 .whatsapp-float {
     position: fixed;
     width: 60px;
     height: 60px;
     bottom: 25px;
     right: 25px;
-    background-color: #25D366; /* color oficial de WhatsApp */
+    background-color: #25D366; /* Color oficial de WhatsApp */
     color: white;
     border-radius: 50%;
     text-align: center;
@@ -368,4 +488,53 @@ hr {
 .whatsapp-float:hover {
     transform: scale(1.1);
     background-color: #1ebe5d;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero h2 {
+        font-size: 1.2em;
+    }
+    .hero-tagline {
+        font-size: 1em;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    #contactForm {
+        padding: 20px;
+    }
+    .experience-list::before {
+        display: none; /* Oculta línea en móviles para simplicidad */
+    }
+    .experience-list-item:nth-child(even) .experience-list-content {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 50px 0;
+    }
+    .section {
+        padding: 40px 0;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
 }
