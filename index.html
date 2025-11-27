@@ -4,50 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel Fandiño | CV - Administrador de Empresas y Especialista en Gestión de Talento Humano</title>
-    <meta name="description" content="CV de Miguel Fandiño, administrador de empresas especializado en gestión de talento humano, transformación digital y sistemas de información gerencial. Más de 5 años de experiencia en capacitación, bienestar laboral y digitalización.">
+    <meta name="description" content="CV de Miguel Fandiño, administrador de empresas especializado en gestión de talento humano, transformación digital y sistemas de información gerencial.">
     <meta name="author" content="Miguel Fandiño">
-    <meta name="keywords" content="CV, Miguel Fandiño, administrador de empresas, gestión de talento humano, transformación digital, sistemas de información gerencial, capacitación, bienestar laboral, Colombia">
-    <meta name="robots" content="index, follow">
-    <!-- Open Graph para compartir en redes sociales (mejora impacto en reclutadores) -->
-    <meta property="og:title" content="Miguel Fandiño | CV - Especialista en Gestión de Talento Humano">
-    <meta property="og:description" content="Portafolio profesional de Miguel Fandiño: experiencia en transformación digital, gestión documental y certificaciones ISO. Descarga mi CV y contáctame.">
-    <meta property="og:image" content="https://urgency0850.github.io/web_vault.github.io/Img/Foto%20perfil.webp"> <!-- Reemplaza con URL absoluta si es necesario -->
-    <meta property="og:url" content="https://urgency0850.github.io/web_vault.github.io/">
-    <meta property="og:type" content="website">
-    <!-- Favicon (agrega uno si no tienes) -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="CV, Miguel Fandiño, administrador de empresas, gestión de talento humano, transformación digital">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png">
+    
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Fallback para Font Awesome (opcional, pero mejora carga) -->
-    <link rel="stylesheet" href="css/font-awesome-fallback.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
 </head>
 <body class="light-mode">
-    <!-- Botones flotantes con accesibilidad mejorada -->
-    <a href="https://www.linkedin.com/in/fandinomiguel" class="linkedin-float" target="_blank" rel="noopener" aria-label="Visitar perfil de LinkedIn de Miguel Fandiño">
+
+    <!-- Botones flotantes -->
+    <a href="https://www.linkedin.com/in/fandinomiguel" class="linkedin-float" target="_blank" rel="noopener" aria-label="Visitar perfil de LinkedIn">
         <i class="fab fa-linkedin" aria-hidden="true"></i>
     </a>
-    <a href="https://wa.me/573103185574?text=¡Hola!%20vi%20tu%20perfil%20y%20quiero%20contactarme%20contigo." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp a Miguel Fandiño">
+
+    <a href="https://wa.me/573103185574?text=¡Hola!%20vi%20tu%20perfil%20y%20quiero%20contactarme%20contigo." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
+
     <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar a modo oscuro">
         <i class="fas fa-moon" aria-hidden="true"></i>
     </button>
 
+    <!-- Header / Hero -->
     <header class="hero">
         <div class="container">
-            <img src="Img/Foto perfil.webp" alt="Foto profesional de Miguel Ángel Fandiño Suárez, administrador de empresas" class="hero-photo" loading="lazy">
+            <img src="https://picsum.photos/350/350" alt="Foto profesional de Miguel Ángel Fandiño Suárez" class="hero-photo" loading="lazy">
+            
             <h1>Miguel Ángel Fandiño Suárez</h1>
             <h2>Administrador de Empresas | Especialista en Gestión de Sistemas de Información Gerencial</h2>
             <p class="hero-tagline">"Transformando el Talento Humano en la era digital"</p>
+            
             <nav class="hero-buttons">
-                <a href="pdf/CV.pdf" download class="btn btn-primary" target="_blank" rel="noopener" aria-label="Descargar CV de Miguel Fandiño">
-                    <i class="fas fa-download" aria-hidden="true"></i> Descargar CV
+                <!-- AJUSTE 1: Enlace restaurado a pdf/CV.pdf -->
+                <a href="pdf/CV.pdf" download class="btn btn-primary" target="_blank" rel="noopener" aria-label="Descargar CV">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    Descargar CV
                 </a>
-                <a href="#contacto" class="btn btn-secondary" onclick="scrollToSection('contacto')" aria-label="Ir a sección de contacto">Contáctame</a>
+                <a href="#contacto" class="btn btn-secondary" aria-label="Ir a sección de contacto">
+                    Contáctame
+                </a>
             </nav>
         </div>
     </header>
 
+    <!-- Sobre Mí -->
     <section id="sobre-mi" class="section">
         <div class="container">
             <h2>Sobre Mí</h2>
@@ -55,28 +71,34 @@
         </div>
     </section>
 
+    <!-- Experiencia -->
     <section id="experiencia" class="section">
         <div class="container">
             <h2>Experiencia Profesional</h2>
             <div class="experience-list">
+                
                 <div class="experience-list-item">
                     <div class="experience-list-content">
-                        <a href="https://drive.google.com/file/d/1VqjAa_gdVqS_svVVUUdLY0rgz0InRnre/view?pli=1" target="_blank" rel="noopener" aria-label="Ver certificado de experiencia en UCundinamarca">
-                        <h3>Profesional - UCundinamarca (2022/07 - Present)</h3></a>
+                        <a href="https://drive.google.com/file/d/1VqjAa_gdVqS_svVVUUdLY0rgz0InRnre/view?pli=1" target="_blank" rel="noopener">
+                            <h3>Profesional - UCundinamarca (2022/07 - Present)</h3>
+                        </a>
                         <p><strong>Actividades:</strong></p>
-                        <ul> 
+                        <ul>
                             <li>Seguimiento y ejecución de actividades de Formación y Capacitación del personal.</li>
                             <li>Gestión en la elaboración y digitalización de procesos del área.</li>
                             <li>Manejo de plataformas como SIGEP II y SíaObserva.</li>
                         </ul>
                     </div>
                 </div>
+                
                 <hr>
+
                 <div class="experience-list-item">
                     <div class="experience-list-content">
-                        <a href="https://drive.google.com/file/d/1mWRaoxGZNqidTZyHkt55ATEKvadaBoQL/view" target="_blank" rel="noopener" aria-label="Ver certificado de experiencia técnica en UCundinamarca">
-                        <h3>Técnico - UCundinamarca (2019/03 - 2022/06)</h3></a>
-                        <p><strong>Actividades:</strong></p>  
+                        <a href="https://drive.google.com/file/d/1mWRaoxGZNqidTZyHkt55ATEKvadaBoQL/view" target="_blank" rel="noopener">
+                            <h3>Técnico - UCundinamarca (2019/03 - 2022/06)</h3>
+                        </a>
+                        <p><strong>Actividades:</strong></p>
                         <ul>
                             <li>Coordinación y organización del Archivo de Gestión.</li>
                             <li>Elaboración de certificados laborales.</li>
@@ -84,21 +106,26 @@
                         </ul>
                     </div>
                 </div>
+
                 <hr>
+
                 <div class="experience-list-item">
                     <div class="experience-list-content">
-                        <a href="https://drive.google.com/file/d/1PG1DxmdSDmroQ-1X1YHEiy-YUz-xvQsQ/view" target="_blank" rel="noopener" aria-label="Ver certificado de pasantía en Alcaldía Municipal de Silvania">
-                        <h3>Auxiliar - Pasante “Estado Joven” - Dirección de Control Interno de la Alcaldía Municipal de Silvania (2018/02 - 2018/06)</h3></a>
-                        <p><strong>Actividades:</strong></p>  
+                        <a href="https://drive.google.com/file/d/1PG1DxmdSDmroQ-1X1YHEiy-YUz_xvQsQ/view" target="_blank" rel="noopener">
+                            <h3>Auxiliar - Pasante “Estado Joven” - Alcaldía Silvania (2018/02 - 2018/06)</h3>
+                        </a>
+                        <p><strong>Actividades:</strong></p>
                         <ul>
-                            <li>Actividades de seguimiento y auditoría.</li>
+                            <li>Actividades de seguimiento y auditoría en Dirección de Control Interno.</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Educación -->
     <section id="educacion" class="section">
         <div class="container">
             <h2>Educación y Certificaciones</h2>
@@ -106,21 +133,21 @@
                 <li>
                     <h3>Especialista en Gestión de Sistemas de Información Gerencial - Universidad de Cundinamarca (2024-2025)</h3>
                     <p>Enfoque en proyectos</p>
-                    <a href="https://www.acreditta.com/credential/eed5df33-88f0-468a-805e-50ef7fd3f024?resource_type=badge&resource=eed5df33-88f0-468a-805e-50ef7fd3f024" target="_blank" rel="noopener" aria-label="Ver credencial de especialización en Acreditta">
+                    <a href="#" target="_blank" rel="noopener">
                         Show Credential <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li>
                     <h3>Explore Emerging Tech - IBM (2024)</h3>
                     <p>Habilidades adquiridas de IA, Blockchain, Cloud Computing, Ciberseguridad, Data Science, IoT.</p>
-                    <a href="https://www.credly.com/badges/b492bf71-e7fe-4967-85cb-0631ab2b1f0d/public_url" target="_blank" rel="noopener" aria-label="Ver credencial de IBM en Credly">
+                    <a href="#" target="_blank" rel="noopener">
                         Show Credential <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li>
                     <h3>Transformación digital para el empleo - Google (2024)</h3>
                     <p>Enfoque en herramientas digitales emergentes</p>
-                    <a href="https://skillshop.exceedlms.com/student/award/Qxj2yYdDVihD7mE8kkp1ht2x" target="_blank" rel="noopener" aria-label="Ver credencial de Google en Skillshop">
+                    <a href="#" target="_blank" rel="noopener">
                         Show Credential <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -128,78 +155,100 @@
         </div>
     </section>
 
+    <!-- Fortalezas -->
     <section id="fortalezas" class="section">
         <div class="container">
             <h2>Fortalezas</h2>
             <div class="skills-grid">
+                
                 <div class="skill">
                     <i class="fa-solid fa-calendar" aria-hidden="true"></i>
                     <h3>Planificación y Organización</h3>
                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress" style="width: 90%;"></div>
                     </div>
+                    <!-- AJUSTE 2: Porcentaje agregado -->
+                    <p class="skill-percent">90%</p>
                 </div>
+
                 <div class="skill">
                     <i class="fa-solid fa-people-arrows" aria-hidden="true"></i>
                     <h3>Resolución de conflictos</h3>
                     <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress" style="width: 95%;"></div>
                     </div>
+                    <!-- AJUSTE 2: Porcentaje agregado -->
+                    <p class="skill-percent">95%</p>
                 </div>
+
                 <div class="skill">
                     <i class="fa-solid fa-ranking-star" aria-hidden="true"></i>
-                    <h3>Compromiso con la calidad de trabajo</h3>
+                    <h3>Compromiso con la calidad</h3>
                     <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress" style="width: 95%;"></div>
                     </div>
+                    <!-- AJUSTE 2: Porcentaje agregado -->
+                    <p class="skill-percent">95%</p>
                 </div>
+
                 <div class="skill">
                     <i class="fa-solid fa-person-walking-arrow-right" aria-hidden="true"></i>
                     <h3>Adaptación al cambio</h3>
                     <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress" style="width: 95%;"></div>
                     </div>
+                    <!-- AJUSTE 2: Porcentaje agregado -->
+                    <p class="skill-percent">95%</p>
                 </div>
+
                 <div class="skill">
                     <i class="fa-solid fa-people-group" aria-hidden="true"></i>
                     <h3>Trabajo en equipo</h3>
                     <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress" style="width: 95%;"></div>
                     </div>
+                    <!-- AJUSTE 2: Porcentaje agregado -->
+                    <p class="skill-percent">95%</p>
                 </div>
+
                 <div class="skill">
                     <i class="fa-solid fa-trophy" aria-hidden="true"></i>
                     <h3>Orientación a resultados</h3>
                     <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress" style="width: 80%;"></div>
                     </div>
+                    <!-- AJUSTE 2: Porcentaje agregado -->
+                    <p class="skill-percent">80%</p>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Proyectos -->
     <section id="proyectos" class="section">
         <div class="container">
             <h2>Logros</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <center><img src="Img/INTEGRADOC_logo_color_horizontal.webp" alt="Logotipo de Integradoc, plataforma de digitalización documental" class="project-image" loading="lazy"></center>
-                    <h3><center>Digitalización de procesos y documentos en Integradoc</center></h3>
-                    <p>Lidero procesos de Digitalización y Optimización de Flujos Documentales en la Dirección de Talento Humano de la UCundinamarca, mediante el diseño e implementación de procesos de digitalización y gestión documental mediante la plataforma Integradoc, lo que permitió la migración progresiva de procesos físicos a entornos digitales bajo principios de trazabilidad, seguridad y eficiencia operativa.</p>
+                    <center><img src="https://picsum.photos/400/200?random=1" alt="Logotipo Integradoc" class="project-image" loading="lazy"></center>
+                    <h3><center>Digitalización en Integradoc</center></h3>
+                    <p>Lidero procesos de Digitalización y Optimización de Flujos Documentales en la Dirección de Talento Humano de la UCundinamarca, mediante la plataforma Integradoc, permitiendo la migración a entornos digitales.</p>
                 </div>
                 <div class="project-card">
-                    <center><img src="Img/ISO-Logo-225x127.webp" alt="Logotipo de certificaciones ISO, estándares de calidad y gestión" class="project-image" loading="lazy"></center>
-                    <h3><center>Apoyo en el Mantenimiento y Auditoría de Certificaciones (ISO 9001, 14001, 45001, 27001, 37001 y EFR)</center></h3>
-                    <p>Brindo apoyo técnico y documental en la gestión, mantenimiento y mejora continua de los sistemas de certificación ISO, asegurando la conformidad y cumplimiento de certificación.</p>
+                    <center><img src="https://picsum.photos/400/200?random=2" alt="Logotipo ISO" class="project-image" loading="lazy"></center>
+                    <h3><center>Apoyo Auditoría ISO</center></h3>
+                    <p>Brindo apoyo técnico y documental en la gestión, mantenimiento y mejora continua de los sistemas de certificación ISO (9001, 14001, 45001, 27001, 37001 y EFR).</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contacto -->
     <section id="contacto" class="section">
         <div class="container">
             <h2>Contáctame</h2>
-            <form id="contactForm" action="https://formspree.io/f/meovoyrb" method="POST" novalidate>
+            <form id="contactForm" action="https://formspree.io/f/meovoyrb" method="POST" novalidate autocomplete="off">
                 <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required aria-describedby="nameError">
@@ -221,8 +270,19 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Miguel Fandiño. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/fandinomiguel" target="_blank" rel="
+                <a href="https://www.linkedin.com/in/fandinomiguel" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>

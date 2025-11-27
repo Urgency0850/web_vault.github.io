@@ -1,4 +1,4 @@
-/* Variables CSS para temas (claro y oscuro) - Mantengo las existentes y agrego para formulario */
+/* Variables CSS */
 :root {
     --bg-color: #ffffff;
     --text-color: #333333;
@@ -8,12 +8,13 @@
     --card-bg: #ffffff;
     --progress-bg: #e9ecef;
     --progress-fill: #007bff;
-    --error-color: #dc3545; /* Rojo para errores */
-    --success-color: #28a745; /* Verde para éxito */
-    --border-color: #ddd; /* Gris claro para bordes */
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --border-color: #ddd;
 }
 
-.dark-mode {
+/* Modo Oscuro */
+body.dark-mode {
     --bg-color: #121212;
     --text-color: #ffffff;
     --primary-color: #0d6efd;
@@ -22,9 +23,9 @@
     --card-bg: #1e1e1e;
     --progress-bg: #343a40;
     --progress-fill: #0d6efd;
-    --error-color: #ff6b6b; /* Rojo más claro para modo oscuro */
-    --success-color: #51cf66; /* Verde más claro para modo oscuro */
-    --border-color: #555; /* Gris oscuro para bordes */
+    --error-color: #ff6b6b;
+    --success-color: #51cf66;
+    --border-color: #555;
 }
 
 * {
@@ -38,7 +39,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
-    transition: background-color 0.3s ease, color 0.3s ease; /* Animación suave para tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -47,12 +48,12 @@ body {
     padding: 0 20px;
 }
 
-/* Animaciones generales */
+/* Animaciones */
 .section {
     padding: 60px 0;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards; /* Fade-in al cargar */
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 @keyframes fadeInUp {
@@ -78,6 +79,7 @@ body {
     margin-bottom: 20px;
     border: 4px solid white;
     transition: transform 0.3s ease;
+    object-fit: cover; /* Corrección de imagen ancha */
 }
 
 .hero-photo:hover {
@@ -114,7 +116,7 @@ body {
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -127,7 +129,6 @@ body {
     background-color: white;
     color: var(--primary-color);
 }
-
 .btn-primary:hover {
     background-color: var(--primary-color);
     color: white;
@@ -140,7 +141,6 @@ body {
     color: white;
     border: 2px solid white;
 }
-
 .btn-secondary:hover {
     background-color: white;
     color: var(--primary-color);
@@ -148,42 +148,25 @@ body {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Secciones generales */
 h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2.5em;
 }
 
-/* Lista Experiencia */
+/* Experiencia */
 .experience-list {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.experience-list::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--primary-color);
-    transform: translateX(-50%);
-}
-
 .experience-list-item {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     position: relative;
 }
 
-.experience-list-item:nth-child(even) .experience-list-content {
-    margin-left: 50%;
-    text-align: right;
-}
-
-/* Línea de separación Experiencie List */
+/* Línea de separación HR */
 hr {
     border: none;
     height: 4px;
@@ -193,7 +176,6 @@ hr {
     margin: 40px auto;
 }
 
-/* Contenedor del recuadro blanco */
 .experience-list-content {
     background: var(--card-bg);
     padding: 30px;
@@ -211,6 +193,9 @@ hr {
     margin-bottom: 10px;
     color: var(--primary-color);
 }
+.experience-list-content a {
+    text-decoration: none;
+}
 
 .experience-list-content p {
     margin-bottom: 10px;
@@ -225,8 +210,9 @@ hr {
 /* Educación */
 #educacion ul {
     list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
 }
-
 #educacion li {
     background: var(--card-bg);
     margin-bottom: 20px;
@@ -235,21 +221,24 @@ hr {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 #educacion li:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
-
 #educacion h3 {
     color: var(--primary-color);
     margin-bottom: 10px;
+}
+#educacion a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Fortalezas */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Ajuste: 3 columnas en escritorio */
     gap: 30px;
 }
 
@@ -259,12 +248,11 @@ hr {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .skill:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .skill i {
@@ -284,8 +272,16 @@ hr {
 .progress {
     height: 100%;
     background: var(--progress-fill);
-    transition: width 1s ease; /* Animación de barra al cargar */
     border-radius: 5px;
+}
+
+/* Estilo para el texto del porcentaje */
+.skill-percent {
+    text-align: right;
+    margin-top: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--text-color);
 }
 
 /* Proyectos */
@@ -300,26 +296,27 @@ hr {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;  /* Transición unificada para consistencia */
-    text-align: justify;  /* Justifica el texto dentro de la tarjeta */
-    padding: 20px;  /* Margen interna para espacio al texto */
-    line-height: 1.6;  /* Espaciado de líneas para reducir amontonamiento */
+    transition: all 0.3s ease;
+    padding: 20px;
+    text-align: justify;
 }
-
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    filter: brightness(1.05);  /* Mejora contraste en hover */
+    filter: brightness(1.05);
 }
-
 .project-card img {
-    width: 60%; 
-    height: 50px; 
-    object-fit: cover;  /* Mantiene proporción de imágenes */
+    width: auto;
+    max-width: 100%;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.project-card h3 {
+    color: var(--primary-color);
     margin-bottom: 15px;
 }
 
-/* Formulario de Contacto (NUEVO: Estilos para el formulario corregido) */
+/* Contacto Formulario */
 #contactForm {
     max-width: 600px;
     margin: 0 auto;
@@ -327,65 +324,41 @@ hr {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-#contactForm:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .form-group {
     margin-bottom: 20px;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--text-color);
 }
-
-.form-group input,
-.form-group textarea {
+.form-group input, .form-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     background: var(--bg-color);
     color: var(--text-color);
-    font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
-}
-
 .form-group textarea {
     resize: vertical;
     min-height: 100px;
 }
-
 .error {
     color: var(--error-color);
     font-size: 0.9em;
     display: none;
     margin-top: 5px;
 }
-
-.success {
-    color: var(--success-color);
-    font-size: 1em;
-    margin-top: 10px;
-}
-
 #formMessage {
     margin-top: 15px;
     font-weight: bold;
 }
+#formMessage.success { color: var(--success-color); }
+#formMessage.error { color: var(--error-color); }
 
 /* Footer */
 .footer {
@@ -395,19 +368,12 @@ hr {
     padding: 20px 0;
     border-top: 1px solid var(--border-color);
 }
-
-.footer .social-links a {
+.footer a {
     color: var(--primary-color);
-    margin: 0 10px;
     font-size: 1.5em;
-    transition: color 0.3s ease;
 }
 
-.footer .social-links a:hover {
-    color: var(--secondary-color);
-}
-
-/* Botón de Tema */
+/* Botones flotantes */
 .theme-toggle {
     position: fixed;
     top: 20px;
@@ -421,120 +387,55 @@ hr {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.3s ease, border-color 0.3s ease;
     z-index: 1000;
 }
+.theme-toggle i { color: var(--text-color); }
 
-.theme-toggle:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.theme-toggle i {
-    color: var(--text-color);
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.theme-toggle:hover i {
-    color: white;
-}
-
-/* Botón flotante de LinkedIn */
 .linkedin-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 90px;  /* Encima del WhatsApp */
+    bottom: 90px;
     right: 25px;
-    background-color: #0077b5;  /* Color oficial de LinkedIn */
+    background-color: #0077b5;
     color: white;
     border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    font-size: 30px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
 }
-
-.linkedin-float:hover {
-    transform: scale(1.1);
-    background-color: #005885;  /* Color más oscuro en hover */
-}
-
-/* Botón flotante de WhatsApp */
 .whatsapp-float {
     position: fixed;
     width: 60px;
     height: 60px;
     bottom: 25px;
     right: 25px;
-    background-color: #25D366; /* Color oficial de WhatsApp */
+    background-color: #25D366;
     color: white;
     border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #1ebe5d;
+    font-size: 30px;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5em;
-    }
-    .hero h2 {
-        font-size: 1.2em;
-    }
-    .hero-tagline {
-        font-size: 1em;
-    }
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    #contactForm {
-        padding: 20px;
-    }
-    .experience-list::before {
-        display: none; /* Oculta línea en móviles para simplicidad */
-    }
-    .experience-list-item:nth-child(even) .experience-list-content {
-        margin-left: 0;
-        text-align: left;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 50px 0;
-    }
-    .section {
-        padding: 40px 0;
-    }
-    h2 {
-        font-size: 2em;
-    }
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+    .hero h1 { font-size: 2.5em; }
+    .hero-buttons { flex-direction: column; }
+    
+    /* En móvil, 1 columna */
+    .skills-grid { grid-template-columns: 1fr; }
+    
+    .hero-photo {
+        width: 250px;
+        height: 250px;
     }
 }
